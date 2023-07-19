@@ -1,0 +1,16 @@
+﻿using _Scripts.Controller.General;
+using DG.Tweening;
+using UnityEngine;
+
+namespace _Scripts.Controller.Items
+{
+    public class InteractableObstacle : BaseInteractable
+    {
+        [SerializeField] private int punishment = -5;
+        public override void Interact()
+        {
+            GameManager.Instance.AddResource(punishment);
+            transform.DOShakePosition(0.5f, new Vector3(0.2f, 0.2f, 1f) * 0.5f, 25);
+        }
+    }
+}

@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be5ab19972b24febb131e69ff27d286d, type: 3}
+  m_Name: Chunks Data
+  m_EditorClassIdentifier: 
+  chunks:
+  - chunk: {fileID: 1343478118837097604, guid: 9a8f39c8c7ba53b48945cdff84ad8792, type: 3}
+    type: 0
+  - chunk: {fileID: 1343478118837097604, guid: 302d2298c2521494eb694d59b7f473a1, type: 3}
+    type: 3
+  - chunk: {fileID: 1343478118837097604, guid: 6cec47d2762547c49be6847442f6b6a5, type: 3}
+    type: 3
+  - chunk: {fileID: 1343478118837097604, guid: f0a6e4bd8a78e8c418bbcb48e0784571, type: 3}
+    type: 1
+  - chunk: {fileID: 1343478118837097604, guid: 3f7d06351c2ceac48ad1a5d2e534e57f, type: 3}
+    type: 1
+  - chunk: {fileID: 1343478118837097604, guid: c25430ad572864f4fb3e84485e13699f, type: 3}
+    type: 1
+  - chunk: {fileID: 1343478118837097604, guid: 2b12b959c20660748a0766ac97379b9b, type: 3}
+    type: 2
+  - chunk: {fileID: 1343478118837097604, guid: 08a8a4d065cb37b4fa8359d596b38940, type: 3}
+    type: 2
+  - chunk: {fileID: 1343478118837097604, guid: ab75123bfea6996478a7fd557f5284f5, type: 3}
+    type: 2
+  - chunk: {fileID: 1343478118837097604, guid: f2e4b143ff5593440a004dbd55edda05, type: 3}
+    type: 4
+  easyDifficulty:
+    difficulty: 0
+    minObstacleDistance: 5
+    minResourceDistance: 1
+    minChoiceDistance: 4
+  mediumDifficulty:
+    difficulty: 1
+    minObstacleDistance: 3
+    minResourceDistance: 1
+    minChoiceDistance: 3
+  hardDifficulty:
+    difficulty: 2
+    minObstacleDistance: 1
+    minResourceDistance: 1
+    minChoiceDistance: 1
