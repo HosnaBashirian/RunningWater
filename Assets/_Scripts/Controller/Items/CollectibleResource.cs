@@ -1,5 +1,6 @@
 ﻿using _Scripts.Controller.General;
 using _Scripts.Controller.UI;
+using _Scripts.Models.General;
 
 namespace _Scripts.Controller.Items
 {
@@ -7,7 +8,7 @@ namespace _Scripts.Controller.Items
     {
         public override void Interact()
         {
-            GameManager.Instance.AddResource(2);
+            GameManager.Instance.AddResource(2, ResourceType.Coin);
             base.Interact();
         }
     }

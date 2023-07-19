@@ -58,6 +58,7 @@ namespace _Scripts.Controller.Ground
                     ChunkType.Obstacle,
                     ChunkType.Resource,
                     ChunkType.Choice,
+                    ChunkType.ChoiceWall
                 };
                 
                 if (counter - lastObstaclePos < difficultyData.minObstacleDistance)
@@ -73,6 +74,7 @@ namespace _Scripts.Controller.Ground
                 if (counter - lastChoicePos < difficultyData.minChoiceDistance)
                 {
                     validChunkTypes.Remove(ChunkType.Choice);
+                    validChunkTypes.Remove(ChunkType.ChoiceWall);
                 }
                 
                 var chunkType = validChunkTypes[UnityEngine.Random.Range(0, validChunkTypes.Count)];
@@ -93,6 +95,9 @@ namespace _Scripts.Controller.Ground
                         lastResourcePos = counter;
                         break;
                     case ChunkType.Choice:
+                        lastChoicePos = counter;
+                        break;
+                    case ChunkType.ChoiceWall:
                         lastChoicePos = counter;
                         break;
                 }

@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18f9e8abf2b34cebb76a52924a45d3cc, type: 3}
+  m_Name: Choice Data
+  m_EditorClassIdentifier: 
+  choices:
+  - title: "\u0634\u0633\u062A\u0646 \u0645\u0627\u0634\u06CC\u0646"
+    description: "\u0628\u0631\u0627\u06CC \u0634\u0633\u062A\u0646 \u0645\u0627\u0634\u06CC\u0646
+      \u06A9\u062F\u0648\u0645 \u0631\u0648\u0634 \u0628\u0647\u062A\u0631\u0647\u061F"
+    goodChoiceText: "\u06CC\u06A9 \u0633\u0637\u0644 \u0622\u0628"
+    badChoiceText: "\u0634\u0644\u0646\u06AF"
+    goodChoiceResources:
+    - resourceType: 0
+      amount: -5
+    - resourceType: 2
+      amount: -10
+    badChoiceResources:
+    - resourceType: 0
+      amount: -15
+    - resourceType: 2
+      amount: -5
+  - title: "\u062A\u0645\u06CC\u0631 \u06A9\u0631\u062F\u0646 \u062D\u06CC\u0627\u0637"
+    description: "\u062D\u06CC\u0627\u0637 \u062E\u0627\u0646\u0647 \u0631\u0627
+      \u0628\u0627 \u06A9\u062F\u0627\u0645 \u0631\u0648\u0634 \u062A\u0645\u06CC\u0632
+      \u0645\u06CC\u06A9\u0646\u06CC\u062F\u061F"
+    goodChoiceText: "\u0628\u0627 \u062C\u0627\u0631\u0648"
+    badChoiceText: "\u0634\u0644\u0646\u06AF"
+    goodChoiceResources:
+    - resourceType: 0
+      amount: -5
+    badChoiceResources:
+    - resourceType: 0
+      amount: -15
+    - resourceType: 3
+      amount: 5
+  - title: "\u06A9\u0627\u0634\u062A \u0645\u06CC\u0648\u0647"
+    description: "\u06A9\u062F\u0627\u0645 \u0645\u06CC\u0648\u0647 \u062F\u0631
+      \u0632\u0645\u0627\u0646 \u06A9\u0645 \u0622\u0628\u06CC \u0628\u0631\u0627\u06CC
+      \u06A9\u0627\u0634\u062A \u0645\u0646\u0627\u0633\u0628 \u062A\u0631 \u0627\u0633\u062A\u061F"
+    goodChoiceText: "\u067E\u0631\u062A\u0642\u0627\u0644"
+    badChoiceText: "\u0647\u0646\u0648\u0627\u0646\u0647"
+    goodChoiceResources:
+    - resourceType: 0
+      amount: -5
+    - resourceType: 1
+      amount: 5
+    badChoiceResources:
+    - resourceType: 0
+      amount: -15
+    - resourceType: 1
+      amount: 10

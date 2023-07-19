@@ -33,11 +33,13 @@ MonoBehaviour:
     type: 2
   - chunk: {fileID: 1343478118837097604, guid: f2e4b143ff5593440a004dbd55edda05, type: 3}
     type: 4
+  - chunk: {fileID: 1343478118837097604, guid: 4db3203d041bb7545833d7a199e2c96f, type: 3}
+    type: 5
   easyDifficulty:
     difficulty: 0
     minObstacleDistance: 5
     minResourceDistance: 1
-    minChoiceDistance: 4
+    minChoiceDistance: 3
   mediumDifficulty:
     difficulty: 1
     minObstacleDistance: 3

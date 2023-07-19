@@ -1,6 +1,8 @@
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using _Scripts.Controller.UI;
+using _Scripts.Models.General;
 using _Scripts.Models.Ground;
 using _Scripts.Utils;
 using MyBox;
@@ -13,8 +15,16 @@ namespace _Scripts.Controller.General
         private GameObject currentLevel = null;
         [SerializeField, Range(10, 50)] private int levelLength = 15;
         [SerializeField] private GroundDifficulty difficulty = GroundDifficulty.Easy;
-        private int currentResource = 10;
-        
+
+        public Dictionary<ResourceType, int> resources = new Dictionary<ResourceType, int>()
+        {
+            {ResourceType.Water, 100},
+            {ResourceType.Energy, 50},
+            {ResourceType.Coin, 0},
+            {ResourceType.Happiness, 50},
+        };
+
+
         public bool IsGameStarted { get; private set; } = false;
         public bool IsGameFinished { get; private set; } = false;
 
@@ -41,8 +51,14 @@ namespace _Scripts.Controller.General
             CreateLevel();
             IsGameStarted = false;
             IsGameFinished = false;
-            currentResource = 10;
-            UIManager.Instance.HudController.SetResourceText(currentResource);
+            resources[ResourceType.Water] = 100;
+            resources[ResourceType.Energy] = 50;
+            resources[ResourceType.Coin] = 0;
+            resources[ResourceType.Happiness] = 50;
+            GameHub.Instance.UIManager.HudController.SetResourceText(resources[ResourceType.Water], ResourceType.Water);
+            GameHub.Instance.UIManager.HudController.SetResourceText(resources[ResourceType.Energy], ResourceType.Energy);
+            GameHub.Instance.UIManager.HudController.SetResourceText(resources[ResourceType.Coin], ResourceType.Coin);
+            GameHub.Instance.UIManager.HudController.SetResourceText(resources[ResourceType.Happiness], ResourceType.Happiness);
             DelayedReset();
         }
 
@@ -51,10 +67,17 @@ namespace _Scripts.Controller.General
             await Task.Yield();
             await Task.Yield();
             await Task.Yield();
-            UIManager.Instance.HudController.HideGameOver();
+            GameHub.Instance.UIManager.HudController.HideGameOver();
             IsGameStarted = false;
             IsGameFinished = false;
-            currentResource = 10;
+            resources[ResourceType.Water] = 100;
+            resources[ResourceType.Energy] = 50;
+            resources[ResourceType.Coin] = 0;
+            resources[ResourceType.Happiness] = 50;
+            GameHub.Instance.UIManager.HudController.SetResourceText(resources[ResourceType.Water], ResourceType.Water);
+            GameHub.Instance.UIManager.HudController.SetResourceText(resources[ResourceType.Energy], ResourceType.Energy);
+            GameHub.Instance.UIManager.HudController.SetResourceText(resources[ResourceType.Coin], ResourceType.Coin);
+            GameHub.Instance.UIManager.HudController.SetResourceText(resources[ResourceType.Happiness], ResourceType.Happiness);
         }
 
         [ButtonMethod()]
@@ -64,45 +87,48 @@ namespace _Scripts.Controller.General
             {
                 DestroyImmediate(currentLevel);
             }
+
             currentLevel = GameHub.Instance.GroundGenerator.GenerateGround(levelLength, difficulty);
         }
-        
-        public void MultiplyResource(float value)
+
+        public void MultiplyResource(float value, ResourceType resourceType = ResourceType.Water)
         {
             // print("MultiplyResource by " + value + "");
-            currentResource = (int) (Convert.ToSingle(currentResource) * value);
-            if (currentResource <= 0)
+            resources[resourceType] = (int) (Convert.ToSingle(resources[resourceType]) * value);
+            if (resources[resourceType] <= 0)
             {
-                currentResource = 0;
+                resources[resourceType] = 0;
                 GameOver();
             }
-            UIManager.Instance.HudController.SetResourceText(currentResource);
+
+            GameHub.Instance.UIManager.HudController.SetResourceText(resources[resourceType], resourceType);
         }
-        
-        public void AddResource(int value)
+
+        public void AddResource(int value, ResourceType resourceType = ResourceType.Water)
         {
-            currentResource += value;
-            if (currentResource <= 0)
+            resources[resourceType] += value;
+            if (resources[resourceType] <= 0)
             {
-                currentResource = 0;
+                resources[resourceType] = 0;
                 GameOver();
             }
-            UIManager.Instance.HudController.SetResourceText(currentResource);
+
+            GameHub.Instance.UIManager.HudController.SetResourceText(resources[resourceType], resourceType);
         }
-        
+
         public void GameOver()
         {
             IsGameStarted = false;
             IsGameFinished = true;
-            UIManager.Instance.HudController.SetResourceText(0);
-            UIManager.Instance.HudController.ShowGameOver();
+            GameHub.Instance.UIManager.HudController.SetResourceText(0);
+            GameHub.Instance.UIManager.HudController.ShowGameOver();
         }
-        
+
         public void GameWin()
         {
             IsGameStarted = false;
             IsGameFinished = true;
-            UIManager.Instance.HudController.ShowGameWin(currentResource);
+            GameHub.Instance.UIManager.HudController.ShowGameWin(resources[ResourceType.Water]);
         }
     }
 }

@@ -11,6 +11,8 @@ namespace _Scripts.Controller.Player
         [SerializeField] private float playerHorizontalSpeed = 0.005f;
         [SerializeField] private float playerForwardSpeed = 0.1f;
 
+        public bool IsPlayerPaused { get; set; } = false;
+
         private void Awake()
         {
             InputManager.Instance.OnHorizontalSwipe += OnHorizontalSwipe;
@@ -33,9 +35,11 @@ namespace _Scripts.Controller.Player
         private void Update()
         {
             if (!GameManager.Instance.IsGameStarted) return;
+            if (IsPlayerPaused) return;
             var position = transform.position;
             position.z += playerForwardSpeed * Time.deltaTime;
             transform.position = position;
         }
+        
     }
 }

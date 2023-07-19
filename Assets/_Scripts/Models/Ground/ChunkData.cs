@@ -17,5 +17,6 @@ namespace _Scripts.Models.Ground
         Resource = 2,
         Choice = 3,
         Finish = 4,
+        ChoiceWall = 5,
     }
 }
