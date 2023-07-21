@@ -8,7 +8,8 @@ namespace _Scripts.Controller.Items
     {
         public override void Interact()
         {
-            GameManager.Instance.AddResource(2, ResourceType.Coin);
+            var amount = GameManager.Instance.x2PowerUpActive ? 2 : 1;
+            GameManager.Instance.AddResource(amount, ResourceType.Coin);
             base.Interact();
         }
     }

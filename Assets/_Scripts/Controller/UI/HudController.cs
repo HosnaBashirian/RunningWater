@@ -1,9 +1,13 @@
 ﻿using System;
+using System.Linq;
 using _Scripts.Controller.General;
 using _Scripts.Models.General;
+using _Scripts.Models.PowerUp;
 using _Scripts.Utils;
+using RTLTMPro;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace _Scripts.Controller.UI
 {
@@ -12,11 +16,22 @@ namespace _Scripts.Controller.UI
         [SerializeField] private TextMeshProUGUI waterResourceText;
         [SerializeField] private TextMeshProUGUI coinResourceText;
         [SerializeField] private TextMeshProUGUI energyResourceText;
-        [SerializeField] private TextMeshProUGUI happinessResourceText;
         [SerializeField] private GameObject gameOverPanel;
         [SerializeField] private TextMeshProUGUI gameOverTitleText;
         [SerializeField] private TextMeshProUGUI gameWinScoreText;
-        
+
+        [SerializeField] private GameObject powerUps;
+        public GameObject PowerUps => powerUps;
+        [SerializeField] private Button x2PowerUpButton;
+        [SerializeField] private Button shieldPowerUpButton;
+        [SerializeField] private RTLTextMeshPro x2PowerUpPrice;
+        [SerializeField] private RTLTextMeshPro shieldPowerUpPrice;
+
+        [SerializeField] private GameObject activePowerUp;
+        [SerializeField] private RTLTextMeshPro activePowerUpText;
+        [SerializeField] private Slider activePowerUpSlider;
+
+
         public void SetResourceText(int value, ResourceType resourceType = ResourceType.Water)
         {
             switch (resourceType)
@@ -30,35 +45,78 @@ namespace _Scripts.Controller.UI
                 case ResourceType.Energy:
                     energyResourceText.DoNumberText(value, 0.2f);
                     break;
-                case ResourceType.Happiness:
-                    happinessResourceText.DoNumberText(value, 0.2f);
-                    break;
             }
         }
-        
+
         public void ShowGameOver()
         {
             gameOverPanel.SetActive(true);
             gameOverTitleText.text = $"Game Over";
             gameWinScoreText.text = $"";
         }
-        
+
         public void ShowGameWin(int score)
         {
             gameOverPanel.SetActive(true);
             gameOverTitleText.text = $"Victory!";
             gameWinScoreText.text = $"congrats";
         }
-        
+
         public void HideGameOver()
         {
             gameOverPanel.SetActive(false);
         }
-        
+
         public void OnRequestRestart()
         {
             HideGameOver();
             GameManager.Instance.InitializeGame();
+        }
+
+        private void Update()
+        {
+            UpdatePowerUpButtons();
+        }
+
+        private void UpdatePowerUpButtons()
+        {
+            if (!GameManager.Instance.IsGameStarted)
+            {
+                powerUps.SetActive(false);
+                activePowerUp.SetActive(false);
+                return;
+            }
+            activePowerUp.SetActive(false);
+            powerUps.SetActive(true);
+            if (GameManager.Instance.shieldPowerUpActive || GameManager.Instance.x2PowerUpActive)
+            {
+                activePowerUp.SetActive(true);
+                activePowerUpText.text = GameManager.Instance.shieldPowerUpActive ? $"سپر" : $"x2";
+                activePowerUpSlider.value = GameManager.Instance.PowerUpTimeLeft;
+            }
+            var x2Requirement = GameHub.Instance.PowerUpDataHolder.requirements.First(x => x.type == PowerUpType.X2);
+            x2PowerUpPrice.text = $"{x2Requirement.resourceAmount}";
+            x2PowerUpButton.interactable =
+                GameManager.Instance.resources[x2Requirement.requiredResource] >= x2Requirement.resourceAmount &&
+                !GameManager.Instance.x2PowerUpUsed;
+
+            var shieldRequirement =
+                GameHub.Instance.PowerUpDataHolder.requirements.First(x => x.type == PowerUpType.Shield);
+            shieldPowerUpPrice.text = $"{shieldRequirement.resourceAmount}";
+            shieldPowerUpButton.interactable =
+                GameManager.Instance.resources[shieldRequirement.requiredResource] >=
+                shieldRequirement.resourceAmount &&
+                !GameManager.Instance.shieldPowerUpUsed;
+        }
+
+        public void UseShield()
+        {
+            GameManager.Instance.UseShield();
+        }
+        
+        public void UseX2()
+        {
+            GameManager.Instance.UseX2();
         }
     }
 }

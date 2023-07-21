@@ -27,8 +27,8 @@ MonoBehaviour:
     - resourceType: 0
       amount: -15
     - resourceType: 2
-      amount: -5
-  - title: "\u062A\u0645\u06CC\u0631 \u06A9\u0631\u062F\u0646 \u062D\u06CC\u0627\u0637"
+      amount: 10
+  - title: "\u062A\u0645\u06CC\u0632 \u06A9\u0631\u062F\u0646 \u062D\u06CC\u0627\u0637"
     description: "\u062D\u06CC\u0627\u0637 \u062E\u0627\u0646\u0647 \u0631\u0627
       \u0628\u0627 \u06A9\u062F\u0627\u0645 \u0631\u0648\u0634 \u062A\u0645\u06CC\u0632
       \u0645\u06CC\u06A9\u0646\u06CC\u062F\u061F"
@@ -37,24 +37,26 @@ MonoBehaviour:
     goodChoiceResources:
     - resourceType: 0
       amount: -5
+    - resourceType: 2
+      amount: -5
     badChoiceResources:
     - resourceType: 0
       amount: -15
-    - resourceType: 3
+    - resourceType: 2
       amount: 5
   - title: "\u06A9\u0627\u0634\u062A \u0645\u06CC\u0648\u0647"
     description: "\u06A9\u062F\u0627\u0645 \u0645\u06CC\u0648\u0647 \u062F\u0631
       \u0632\u0645\u0627\u0646 \u06A9\u0645 \u0622\u0628\u06CC \u0628\u0631\u0627\u06CC
       \u06A9\u0627\u0634\u062A \u0645\u0646\u0627\u0633\u0628 \u062A\u0631 \u0627\u0633\u062A\u061F"
     goodChoiceText: "\u067E\u0631\u062A\u0642\u0627\u0644"
-    badChoiceText: "\u0647\u0646\u0648\u0627\u0646\u0647"
+    badChoiceText: "\u0647\u0646\u062F\u0648\u0627\u0646\u0647"
     goodChoiceResources:
     - resourceType: 0
       amount: -5
-    - resourceType: 1
-      amount: 5
+    - resourceType: 2
+      amount: -5
     badChoiceResources:
     - resourceType: 0
       amount: -15
-    - resourceType: 1
-      amount: 10
+    - resourceType: 2
+      amount: 5

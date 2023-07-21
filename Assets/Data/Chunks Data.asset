@@ -15,9 +15,7 @@ MonoBehaviour:
   chunks:
   - chunk: {fileID: 1343478118837097604, guid: 9a8f39c8c7ba53b48945cdff84ad8792, type: 3}
     type: 0
-  - chunk: {fileID: 1343478118837097604, guid: 302d2298c2521494eb694d59b7f473a1, type: 3}
-    type: 3
-  - chunk: {fileID: 1343478118837097604, guid: 6cec47d2762547c49be6847442f6b6a5, type: 3}
+  - chunk: {fileID: 1343478118837097604, guid: 4db3203d041bb7545833d7a199e2c96f, type: 3}
     type: 3
   - chunk: {fileID: 1343478118837097604, guid: f0a6e4bd8a78e8c418bbcb48e0784571, type: 3}
     type: 1
@@ -33,8 +31,6 @@ MonoBehaviour:
     type: 2
   - chunk: {fileID: 1343478118837097604, guid: f2e4b143ff5593440a004dbd55edda05, type: 3}
     type: 4
-  - chunk: {fileID: 1343478118837097604, guid: 4db3203d041bb7545833d7a199e2c96f, type: 3}
-    type: 5
   easyDifficulty:
     difficulty: 0
     minObstacleDistance: 5

@@ -9,6 +9,7 @@ namespace _Scripts.Controller.Items
         [SerializeField] private int punishment = -5;
         public override void Interact()
         {
+            if (GameManager.Instance.shieldPowerUpActive) return;
             GameManager.Instance.AddResource(punishment);
             transform.DOShakePosition(0.5f, new Vector3(0.2f, 0.2f, 1f) * 0.5f, 25);
         }

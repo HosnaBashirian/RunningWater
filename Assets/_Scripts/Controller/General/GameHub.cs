@@ -3,6 +3,7 @@ using _Scripts.Controller.Player;
 using _Scripts.Controller.UI;
 using _Scripts.Models.Choice;
 using _Scripts.Models.Ground;
+using _Scripts.Models.PowerUp;
 using _Scripts.Utils;
 using UnityEngine;
 
@@ -27,8 +28,21 @@ namespace _Scripts.Controller.General
         
         [SerializeField] private ChoiceDataHolder choiceDataHolder;
         public ChoiceDataHolder ChoiceDataHolder => choiceDataHolder;
+
+        [SerializeField] private PowerUpDataHolder powerUpDataHolder;
+        public PowerUpDataHolder PowerUpDataHolder => powerUpDataHolder;
         
-        
+        public int Coins
+        {
+            get
+            {
+                var amount = PlayerPrefs.GetInt("Coins", 0);
+                return amount;
+            }
+            set => PlayerPrefs.SetInt("Coins", value);
+        }
+
+
         private void Awake()
         {
             DontDestroyOnLoad(gameObject);
