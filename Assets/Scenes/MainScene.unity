@@ -4503,6 +4503,7 @@ MonoBehaviour:
   uiManager: {fileID: 1222118312}
   choiceDataHolder: {fileID: 11400000, guid: c88221055927d6842a452266749120e8, type: 2}
   powerUpDataHolder: {fileID: 11400000, guid: 7a3c7a017a6f63440b2770b4bc54c0b8, type: 2}
+  particleData: {fileID: 11400000, guid: 4149f02743aaa7b4f8ba614d182d1a5a, type: 2}
 --- !u!4 &1222118311
 Transform:
   m_ObjectHideFlags: 0

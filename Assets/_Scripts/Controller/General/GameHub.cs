@@ -2,6 +2,7 @@ using _Scripts.Controller.Ground;
 using _Scripts.Controller.Player;
 using _Scripts.Controller.UI;
 using _Scripts.Models.Choice;
+using _Scripts.Models.General;
 using _Scripts.Models.Ground;
 using _Scripts.Models.PowerUp;
 using _Scripts.Utils;
@@ -31,7 +32,10 @@ namespace _Scripts.Controller.General
 
         [SerializeField] private PowerUpDataHolder powerUpDataHolder;
         public PowerUpDataHolder PowerUpDataHolder => powerUpDataHolder;
-        
+
+        [SerializeField] private ParticleData particleData;
+        public ParticleData ParticleData => particleData;
+
         public int Coins
         {
             get

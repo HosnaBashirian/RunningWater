@@ -17,6 +17,10 @@ MonoBehaviour:
     type: 0
   - chunk: {fileID: 1343478118837097604, guid: 4db3203d041bb7545833d7a199e2c96f, type: 3}
     type: 3
+  - chunk: {fileID: 1343478118837097604, guid: 365029bd9adffb1419fceef17851a725, type: 3}
+    type: 1
+  - chunk: {fileID: 1343478118837097604, guid: bd307fde8a45e9749b41217d44241e80, type: 3}
+    type: 1
   - chunk: {fileID: 1343478118837097604, guid: f0a6e4bd8a78e8c418bbcb48e0784571, type: 3}
     type: 1
   - chunk: {fileID: 1343478118837097604, guid: 3f7d06351c2ceac48ad1a5d2e534e57f, type: 3}
