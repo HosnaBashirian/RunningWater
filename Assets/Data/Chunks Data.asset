@@ -39,14 +39,14 @@ MonoBehaviour:
     difficulty: 0
     minObstacleDistance: 5
     minResourceDistance: 1
-    minChoiceDistance: 3
+    minChoiceDistance: 5
   mediumDifficulty:
     difficulty: 1
     minObstacleDistance: 3
     minResourceDistance: 1
-    minChoiceDistance: 3
+    minChoiceDistance: 4
   hardDifficulty:
     difficulty: 2
     minObstacleDistance: 1
     minResourceDistance: 1
-    minChoiceDistance: 1
+    minChoiceDistance: 3

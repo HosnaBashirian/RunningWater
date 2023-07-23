@@ -59,6 +59,7 @@ namespace _Scripts.Controller.General
                 if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
                 {
                     IsGameStarted = true;
+                    IsGameFinished = false;
                 }
             }
 
@@ -92,25 +93,11 @@ namespace _Scripts.Controller.General
             x2PowerUpActive = false;
             x2PowerUpUsed = false;
             OnPowerUpExpire?.Invoke();
-            DelayedReset();
-        }
-
-        private async void DelayedReset()
-        {
-            await Task.Yield();
-            await Task.Yield();
-            await Task.Yield();
             GameHub.Instance.UIManager.HudController.HideGameOver();
             IsGameStarted = false;
             IsGameFinished = false;
-            resources[ResourceType.Water] = 100;
-            resources[ResourceType.Energy] = 50;
-            GameHub.Instance.UIManager.ChoicePopUp.gameObject.SetActive(false);
-            GameHub.Instance.UIManager.HudController.SetResourceText(resources[ResourceType.Water], ResourceType.Water);
-            GameHub.Instance.UIManager.HudController.SetResourceText(resources[ResourceType.Energy], ResourceType.Energy);
-            GameHub.Instance.UIManager.HudController.SetResourceText(GameHub.Instance.Coins, ResourceType.Coin);
         }
-
+        
         [ButtonMethod()]
         public void CreateLevel()
         {

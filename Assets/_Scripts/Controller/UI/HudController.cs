@@ -17,8 +17,8 @@ namespace _Scripts.Controller.UI
         [SerializeField] private TextMeshProUGUI coinResourceText;
         [SerializeField] private TextMeshProUGUI energyResourceText;
         [SerializeField] private GameObject gameOverPanel;
-        [SerializeField] private TextMeshProUGUI gameOverTitleText;
-        [SerializeField] private TextMeshProUGUI gameWinScoreText;
+        [SerializeField] private RTLTextMeshPro gameOverTitleText;
+        [SerializeField] private RTLTextMeshPro gameWinScoreText;
 
         [SerializeField] private GameObject powerUps;
         public GameObject PowerUps => powerUps;
@@ -51,15 +51,15 @@ namespace _Scripts.Controller.UI
         public void ShowGameOver()
         {
             gameOverPanel.SetActive(true);
-            gameOverTitleText.text = $"Game Over";
+            gameOverTitleText.text = $"باختی";
             gameWinScoreText.text = $"";
         }
 
         public void ShowGameWin(int score)
         {
             gameOverPanel.SetActive(true);
-            gameOverTitleText.text = $"Victory!";
-            gameWinScoreText.text = $"congrats";
+            gameOverTitleText.text = $"بردی!";
+            gameWinScoreText.text = "آفرین!" + score + " لیتر آب ذخیره کردی!";
         }
 
         public void HideGameOver()
