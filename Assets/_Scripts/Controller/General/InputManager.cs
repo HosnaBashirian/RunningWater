@@ -8,12 +8,13 @@ namespace _Scripts.Controller.General
     {
         public event Action<float> OnHorizontalSwipe;
         private Vector3 _lastMousePosition;
-        
+
         private void Update()
         {
+            if (UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject()) return;
             if (Input.GetMouseButtonDown(0))
             {
-                 _lastMousePosition = Input.mousePosition;
+                _lastMousePosition = Input.mousePosition;
             }
             else if (Input.GetMouseButton(0))
             {
@@ -22,6 +23,7 @@ namespace _Scripts.Controller.General
                 {
                     OnHorizontalSwipe?.Invoke(delta.x);
                 }
+
                 _lastMousePosition = Input.mousePosition;
             }
         }

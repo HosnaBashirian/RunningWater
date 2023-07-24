@@ -10,7 +10,8 @@ namespace _Scripts.Controller.UI
         
         [SerializeField] private ChoicePopUp choicePopUp;
         public ChoicePopUp ChoicePopUp => choicePopUp;
-        
-        
+        [SerializeField] private CharacterSelectionPopUp characterSelectionPopUp;
+        public CharacterSelectionPopUp CharacterSelectionPopUp => characterSelectionPopUp;
+
     }
 }

@@ -34,6 +34,8 @@ namespace _Scripts.Controller.UI
         [SerializeField] private RTLTextMeshPro activePowerUpText;
         [SerializeField] private Slider activePowerUpSlider;
         
+        [SerializeField] private GameObject characterSelectionPanel;
+        
 
         public void SetResourceText(int value, ResourceType resourceType = ResourceType.Water)
         {
@@ -141,6 +143,11 @@ namespace _Scripts.Controller.UI
         public void UseX2()
         {
             GameManager.Instance.UseX2();
+        }
+
+        public void OpenCharacterSelectionPanel()
+        {
+            characterSelectionPanel.SetActive(true);
         }
     }
 }

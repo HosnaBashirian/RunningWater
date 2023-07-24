@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2f2cec571a0486bb2a1ef6b1c07d2ad, type: 3}
+  m_Name: Character Data
+  m_EditorClassIdentifier: 
+  characters:
+  - key: casual_male
+    image: {fileID: 21300000, guid: 9232b65d157470b4781f95795c59e2bd, type: 3}
+    price: 0
+  - key: casual_girl
+    image: {fileID: 21300000, guid: fccf56f6c92b07f47897b6893ede8ae0, type: 3}
+    price: 0
+  - key: female_doctor
+    image: {fileID: 21300000, guid: 6448f53e4a0a038409f3758a2855b518, type: 3}
+    price: 100
+  - key: male_doctor
+    image: {fileID: 21300000, guid: 4c405c3a5ed22004f8164300826f529a, type: 3}
+    price: 100
+  - key: wizard
+    image: {fileID: 21300000, guid: 1eb48af74c9b06a48a7dcb9b938dd1ce, type: 3}
+    price: 125
+  - key: witch
+    image: {fileID: 21300000, guid: 3dc20058e724de34cba4471d56d1d3bf, type: 3}
+    price: 125
+  - key: worker_female
+    image: {fileID: 21300000, guid: c08c3b87a55d01d44815527b7c4351a7, type: 3}
+    price: 600
+  - key: casual_male2
+    image: {fileID: 21300000, guid: 69a41aa5bb2b3184784f045598a234c0, type: 3}
+    price: 800
+  - key: worker_male
+    image: {fileID: 21300000, guid: 4ef520d51ef3faf49b25710059b67812, type: 3}
+    price: 600
+  - key: cowboy_female
+    image: {fileID: 21300000, guid: 5a230bb8a1906484a8addca4d4e0186b, type: 3}
+    price: 1000
+  - key: cowboy_male
+    image: {fileID: 21300000, guid: 063233b5d6a91d84cb040fb207e0d211, type: 3}
+    price: 1000
+  - key: casual_female2
+    image: {fileID: 21300000, guid: f52b1d160aa938d4889e905cd73bd682, type: 3}
+    price: 800
+  - key: kimono_male
+    image: {fileID: 21300000, guid: 2824de0dc1abffd42b126b354271429a, type: 3}
+    price: 1500
+  - key: kimono_female
+    image: {fileID: 21300000, guid: 0c2ac156fa621ad40ae71ac5c4f40860, type: 3}
+    price: 1500
+  selectedCharacter: male_doctor
+  purchasedCharacters:
+  - casual_male
+  - casual_girl
+  - female_doctor
+  - male_doctor

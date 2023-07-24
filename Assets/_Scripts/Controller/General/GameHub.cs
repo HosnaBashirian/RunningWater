@@ -35,6 +35,9 @@ namespace _Scripts.Controller.General
 
         [SerializeField] private ParticleData particleData;
         public ParticleData ParticleData => particleData;
+        
+        [SerializeField] private CharacterData characterDataHolder;
+        public CharacterData CharacterDataHolder => characterDataHolder;
 
         public int Coins
         {

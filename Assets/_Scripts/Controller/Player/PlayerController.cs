@@ -14,6 +14,7 @@ namespace _Scripts.Controller.Player
         [SerializeField] private float playerForwardSpeed = 0.1f;
         [SerializeField] private GameObject shield;
         [SerializeField] private List<PlayerSkin> skins;
+        public List<PlayerSkin> Skins => skins;
 
         public bool IsPlayerPaused { get; set; } = false;
 
@@ -22,13 +23,20 @@ namespace _Scripts.Controller.Player
             get => PlayerPrefs.GetInt("ActiveCharacter", 0);
             set => PlayerPrefs.SetInt("ActiveCharacter", value);
         }
+        
 
         private void Awake()
         {
             InputManager.Instance.OnHorizontalSwipe += OnHorizontalSwipe;
             GameManager.Instance.OnPowerUpActive += OnPowerUpActive;
             GameManager.Instance.OnPowerUpExpire += OnPowerUpExpire;
+            SetCharacter();
+        }
+
+        public void SetCharacter()
+        {
             var activeCharacter = ActiveSkin;
+
             skins.ForEach(x=>x.gameObject.SetActive(false));
             skins[activeCharacter].gameObject.SetActive(true);
         }

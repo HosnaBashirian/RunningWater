@@ -79,11 +79,13 @@ namespace _Scripts.Controller.General
 
         public void InitializeGame()
         {
-            var playerStartPos = new Vector3(0, 0.6f, 0);
-            GameHub.Instance.Player.transform.position = playerStartPos;
-            CreateLevel();
+            print("Initialize");
             IsGameStarted = false;
             IsGameFinished = false;
+            var playerStartPos = new Vector3(0, 0.6f, 0);
+            GameHub.Instance.Player.transform.position = playerStartPos;
+            GameHub.Instance.UIManager.HudController.HideGameOver();
+            CreateLevel();
             resources[ResourceType.Water] = 100;
             resources[ResourceType.Energy] = 50;
             GameHub.Instance.UIManager.HudController.SetResourceText(resources[ResourceType.Water], ResourceType.Water);
@@ -95,7 +97,6 @@ namespace _Scripts.Controller.General
             x2PowerUpActive = false;
             x2PowerUpUsed = false;
             OnPowerUpExpire?.Invoke();
-            GameHub.Instance.UIManager.HudController.HideGameOver();
             IsGameStarted = false;
             IsGameFinished = false;
         }
@@ -163,15 +164,22 @@ namespace _Scripts.Controller.General
             GameHub.Instance.UIManager.HudController.SetResourceText(0);
             GameHub.Instance.UIManager.HudController.ShowGameOver();
             GameHub.Instance.UIManager.ChoicePopUp.gameObject.SetActive(false);
+            OnPowerUpExpire?.Invoke();
+            shieldPowerUpActive = false;
+            x2PowerUpActive = false;
         }
 
         public void GameWin()
         {
+            print("Game win");
             IsGameStarted = false;
             IsGameFinished = true;
             GameHub.Instance.UIManager.HudController.ShowGameWin(resources[ResourceType.Water]);
             GameHub.Instance.UIManager.ChoicePopUp.gameObject.SetActive(false);
             GameHub.Instance.Player.Win();
+            OnPowerUpExpire?.Invoke();
+            shieldPowerUpActive = false;
+            x2PowerUpActive = false;
         }
 
         public void UseShield()
