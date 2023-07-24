@@ -13,6 +13,9 @@ namespace _Scripts.Controller.UI
 {
     public class HudController : MonoBehaviour
     {
+        [SerializeField] private GameObject startPanel;
+        [SerializeField] private GameObject resourcesPanel;
+        [SerializeField] private GameObject powerUpPanel;
         [SerializeField] private TextMeshProUGUI waterResourceText;
         [SerializeField] private TextMeshProUGUI coinResourceText;
         [SerializeField] private TextMeshProUGUI energyResourceText;
@@ -30,7 +33,7 @@ namespace _Scripts.Controller.UI
         [SerializeField] private GameObject activePowerUp;
         [SerializeField] private RTLTextMeshPro activePowerUpText;
         [SerializeField] private Slider activePowerUpSlider;
-
+        
 
         public void SetResourceText(int value, ResourceType resourceType = ResourceType.Water)
         {
@@ -75,7 +78,28 @@ namespace _Scripts.Controller.UI
 
         private void Update()
         {
-            UpdatePowerUpButtons();
+            if (GameManager.Instance.IsGameStarted)
+            {
+                startPanel.SetActive(false);
+                resourcesPanel.SetActive(true);
+                powerUpPanel.SetActive(true);
+                UpdatePowerUpButtons();
+            }
+            else
+            {
+                if (GameManager.Instance.IsGameFinished)
+                {
+                    startPanel.SetActive(false);
+                    resourcesPanel.SetActive(false);
+                    powerUpPanel.SetActive(false);
+                }
+                else
+                {
+                    startPanel.SetActive(true);
+                    resourcesPanel.SetActive(true);
+                    powerUpPanel.SetActive(false);
+                }
+            }
         }
 
         private void UpdatePowerUpButtons()

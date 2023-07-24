@@ -56,8 +56,10 @@ namespace _Scripts.Controller.General
         {
             if (!IsGameStarted && !IsGameFinished)
             {
-                if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
+                if (Input.GetMouseButtonDown(0))
                 {
+                    // check if player clicked on UI
+                    if (UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject()) return;
                     IsGameStarted = true;
                     IsGameFinished = false;
                 }
