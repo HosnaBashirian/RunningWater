@@ -33,7 +33,27 @@ ModelImporter:
   - first:
       74: -3157049221687396579
     second: MonsterArmature|Yes
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Black
+    second: {fileID: 2100000, guid: 714e1ee5b9f7bd545b3df4f67d5dcf85, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Main
+    second: {fileID: 2100000, guid: d70fe6b5022bbe9458465564c702c525, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Main_Dark
+    second: {fileID: 2100000, guid: 742c2835a1b72464fb0d45d35585eea1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: White
+    second: {fileID: 2100000, guid: 769620bfb018b944791ece4c72c21042, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
