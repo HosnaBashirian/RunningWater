@@ -17,3 +17,5 @@ MonoBehaviour:
     particle: {fileID: 263097889053042289, guid: d569b1afa55a7ea4baca8c41ba720412, type: 3}
   - key: enemyPass
     particle: {fileID: 7157378976878281723, guid: 2bff477436e08ec48869c2eeaed6d552, type: 3}
+  - key: coinCollect
+    particle: {fileID: 9132497611164359574, guid: b2f88b3de8f1c484c8dd0c93cbd64b1d, type: 3}
