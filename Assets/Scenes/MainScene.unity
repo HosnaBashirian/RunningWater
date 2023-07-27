@@ -2417,7 +2417,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83d17f130cb04e9f800d62e952f0db3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelLength: 36
+  levelLength: 50
   difficulty: 0
   x2PowerUpActive: 0
   x2PowerUpUsed: 0
