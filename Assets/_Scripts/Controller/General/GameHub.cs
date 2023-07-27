@@ -39,6 +39,9 @@ namespace _Scripts.Controller.General
         [SerializeField] private CharacterData characterDataHolder;
         public CharacterData CharacterDataHolder => characterDataHolder;
 
+        [SerializeField] private AudioPlayer audioPlayer;
+        public AudioPlayer AudioPlayer => audioPlayer;
+
         public int Coins
         {
             get

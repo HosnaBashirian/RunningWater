@@ -1,6 +1,7 @@
 ﻿using System;
 using _Scripts.Controller.General;
 using _Scripts.Models.General;
+using _Scripts.Models.Utils;
 using UnityEngine;
 
 namespace _Scripts.Controller.Items
@@ -18,6 +19,7 @@ namespace _Scripts.Controller.Items
             if (GameManager.Instance.shieldPowerUpActive) return;
             GameManager.Instance.AddResource(punishment, ResourceType.Water);
             GameHub.Instance.ParticleData.SpawnParticle("enemyHit", transform.position, Quaternion.identity);
+            GameHub.Instance.AudioPlayer.PlayOneShot(SoundType.Impact);
             Destroy(gameObject);
         }
 

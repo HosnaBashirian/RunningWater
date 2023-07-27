@@ -1,4 +1,6 @@
-﻿using DG.Tweening;
+﻿using _Scripts.Controller.General;
+using _Scripts.Models.Utils;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -76,6 +78,7 @@ namespace _Scripts.Utils
             if (!interactable) return;
             RectTransform.DOKill();
             RectTransform.DOScale(Vector3.one * onHoldSizeMultiplier, duration).SetEase(curve);
+            GameHub.Instance.AudioPlayer.PlayOneShot(SoundType.Click);
         }
 
         public void OnPointerUp(PointerEventData eventData)

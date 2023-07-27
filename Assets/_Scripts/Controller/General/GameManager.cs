@@ -6,6 +6,7 @@ using _Scripts.Controller.UI;
 using _Scripts.Models.General;
 using _Scripts.Models.Ground;
 using _Scripts.Models.PowerUp;
+using _Scripts.Models.Utils;
 using _Scripts.Utils;
 using MyBox;
 using UnityEngine;
@@ -167,11 +168,12 @@ namespace _Scripts.Controller.General
             OnPowerUpExpire?.Invoke();
             shieldPowerUpActive = false;
             x2PowerUpActive = false;
+            GameHub.Instance.AudioPlayer.PlayOneShot(SoundType.Lose);
         }
 
         public void GameWin()
         {
-            print("Game win");
+            // print("Game win");
             IsGameStarted = false;
             IsGameFinished = true;
             GameHub.Instance.UIManager.HudController.ShowGameWin(resources[ResourceType.Water]);
@@ -180,6 +182,7 @@ namespace _Scripts.Controller.General
             OnPowerUpExpire?.Invoke();
             shieldPowerUpActive = false;
             x2PowerUpActive = false;
+            GameHub.Instance.AudioPlayer.PlayOneShot(SoundType.Win);
         }
 
         public void UseShield()
