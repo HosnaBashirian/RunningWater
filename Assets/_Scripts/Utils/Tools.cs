@@ -5,10 +5,13 @@ namespace _Scripts.Utils
 {
     public class Tools : MonoBehaviour
     {
+#if UNITY_EDITOR
+
         [MenuItem("Tools/Screenshot")]
         public static void ScreenShot()
         {
-            ScreenCapture.CaptureScreenshot("C:\\Users\\Sina\\Documents\\Work\\Personal\\RunningWater\\Assets\\Screenshots\\Temp.png");
+            // TODO 
         }
+#endif
     }
 }

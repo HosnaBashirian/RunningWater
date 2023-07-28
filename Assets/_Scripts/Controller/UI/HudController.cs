@@ -109,6 +109,7 @@ namespace _Scripts.Controller.UI
                     startPanel.SetActive(false);
                     resourcesPanel.SetActive(false);
                     powerUpPanel.SetActive(false);
+                    activePowerUp.SetActive(false);
                 }
                 else
                 {
@@ -116,6 +117,7 @@ namespace _Scripts.Controller.UI
                     levelText.text = $"مرحله {GameHub.Instance.Level}";
                     resourcesPanel.SetActive(true);
                     powerUpPanel.SetActive(false);
+                    activePowerUp.SetActive(false);
                 }
             }
         }
@@ -125,6 +127,7 @@ namespace _Scripts.Controller.UI
             if (!GameManager.Instance.IsGameStarted)
             {
                 powerUps.SetActive(false);
+                powerUpPanel.SetActive(false);
                 activePowerUp.SetActive(false);
                 return;
             }

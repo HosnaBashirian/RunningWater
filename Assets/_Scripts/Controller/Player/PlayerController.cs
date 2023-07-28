@@ -33,6 +33,11 @@ namespace _Scripts.Controller.Player
             SetCharacter();
         }
 
+        private void OnEnable()
+        {
+            SetCharacter();
+        }
+
         public void SetCharacter()
         {
             var activeCharacter = ActiveSkin;
