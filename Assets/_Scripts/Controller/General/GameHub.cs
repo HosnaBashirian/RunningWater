@@ -51,6 +51,19 @@ namespace _Scripts.Controller.General
             }
             set => PlayerPrefs.SetInt("Coins", value);
         }
+        
+        public int Level
+        {
+            get
+            {
+                var amount = PlayerPrefs.GetInt("Level", 1);
+                return amount;
+            }
+            set
+            {
+                PlayerPrefs.SetInt("Level", Mathf.Clamp(value, 1, 20));
+            }
+        }
 
 
         private void Awake()

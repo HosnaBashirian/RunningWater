@@ -109,6 +109,11 @@ namespace _Scripts.Controller.General
             {
                 DestroyImmediate(currentLevel);
             }
+            
+            levelLength = GameHub.Instance.Level * 5 + 10;
+            difficulty = GameHub.Instance.Level < 10
+                ? GroundDifficulty.Easy
+                : (GameHub.Instance.Level < 16 ? GroundDifficulty.Medium : GroundDifficulty.Hard);
 
             currentLevel = GameHub.Instance.GroundGenerator.GenerateGround(levelLength, difficulty);
         }

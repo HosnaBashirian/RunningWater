@@ -13,27 +13,25 @@ MonoBehaviour:
   m_Name: Choice Data
   m_EditorClassIdentifier: 
   choices:
-  - title: "\u0634\u0633\u062A\u0646 \u0645\u0627\u0634\u06CC\u0646"
-    description: "\u0628\u0631\u0627\u06CC \u0634\u0633\u062A\u0646 \u0645\u0627\u0634\u06CC\u0646
-      \u06A9\u062F\u0648\u0645 \u0631\u0648\u0634 \u0628\u0647\u062A\u0631\u0647\u061F"
-    goodChoiceText: "\u06CC\u06A9 \u0633\u0637\u0644 \u0622\u0628"
-    badChoiceText: "\u0634\u0644\u0646\u06AF"
+  - description: "\u0622\u06CC\u0627 \u0647\u0646\u06AF\u0627\u0645 \u0645\u0633\u0648\u0627\u06A9
+      \u0632\u062F\u0646\u060C \u0634\u06CC\u0631 \u0622\u0628 \u0631\u0627 \u0628\u0627\u06CC\u062F
+      \u0628\u0633\u062A\u061F"
+    goodChoiceText: "\u0628\u0644\u0647"
+    badChoiceText: "\u062E\u06CC\u0631"
     goodChoiceResources:
     - resourceType: 0
       amount: -5
     - resourceType: 2
+      amount: -5
+    badChoiceResources:
+    - resourceType: 0
       amount: -10
-    badChoiceResources:
-    - resourceType: 0
-      amount: -15
     - resourceType: 2
-      amount: 10
-  - title: "\u062A\u0645\u06CC\u0632 \u06A9\u0631\u062F\u0646 \u062D\u06CC\u0627\u0637"
-    description: "\u062D\u06CC\u0627\u0637 \u062E\u0627\u0646\u0647 \u0631\u0627
-      \u0628\u0627 \u06A9\u062F\u0627\u0645 \u0631\u0648\u0634 \u062A\u0645\u06CC\u0632
-      \u0645\u06CC\u06A9\u0646\u06CC\u062F\u061F"
-    goodChoiceText: "\u0628\u0627 \u062C\u0627\u0631\u0648"
-    badChoiceText: "\u0634\u0644\u0646\u06AF"
+      amount: 2
+  - description: "\u0634\u06CC\u0631 \u0622\u0628 \u062E\u0631\u0627\u0628 \u062F\u0631
+      \u062E\u0627\u0646\u0647 \u0631\u0627:"
+    goodChoiceText: "\u062A\u0639\u0645\u064A\u0631 \u0645\u06CC\u06A9\u0646\u0645"
+    badChoiceText: "\u0646\u0627\u062F\u06CC\u062F\u0647 \u0645\u06CC\u06AF\u06CC\u0631\u0645"
     goodChoiceResources:
     - resourceType: 0
       amount: -5
@@ -41,15 +39,13 @@ MonoBehaviour:
       amount: -5
     badChoiceResources:
     - resourceType: 0
-      amount: -15
+      amount: -10
     - resourceType: 2
-      amount: 5
-  - title: "\u06A9\u0627\u0634\u062A \u0645\u06CC\u0648\u0647"
-    description: "\u06A9\u062F\u0627\u0645 \u0645\u06CC\u0648\u0647 \u062F\u0631
-      \u0632\u0645\u0627\u0646 \u06A9\u0645 \u0622\u0628\u06CC \u0628\u0631\u0627\u06CC
-      \u06A9\u0627\u0634\u062A \u0645\u0646\u0627\u0633\u0628 \u062A\u0631 \u0627\u0633\u062A\u061F"
-    goodChoiceText: "\u067E\u0631\u062A\u0642\u0627\u0644"
-    badChoiceText: "\u0647\u0646\u062F\u0648\u0627\u0646\u0647"
+      amount: 2
+  - description: "\u0632\u0645\u0627\u0646 \u062D\u0645\u0627\u0645 \u06A9\u0631\u062F\u0646
+      \u0628\u0627\u06CC\u062F:"
+    goodChoiceText: "\u06A9\u0648\u062A\u0627\u0647 \u0628\u0627\u0634\u062F"
+    badChoiceText: "\u0637\u0648\u0644\u0627\u0646\u06CC \u0628\u0627\u0634\u062F"
     goodChoiceResources:
     - resourceType: 0
       amount: -5
@@ -57,6 +53,308 @@ MonoBehaviour:
       amount: -5
     badChoiceResources:
     - resourceType: 0
-      amount: -15
+      amount: -10
     - resourceType: 2
-      amount: 5
+      amount: 2
+  - description: "\u0647\u0646\u06AF\u0627\u0645 \u0634\u0633\u062A\u0646 \u062F\u0633\u062A
+      \u0647\u0627 \u0628\u0627 \u0635\u0627\u0628\u0648\u0646\u060C \u0634\u06CC\u0631
+      \u0622\u0628 \u0631\u0627:"
+    goodChoiceText: "\u0645\u06CC\u0628\u0646\u062F\u0645"
+    badChoiceText: "\u0628\u0627\u0632 \u0645\u06CC\u06AF\u0630\u0627\u0631\u0645"
+    goodChoiceResources:
+    - resourceType: 0
+      amount: -5
+    - resourceType: 2
+      amount: -5
+    badChoiceResources:
+    - resourceType: 0
+      amount: -10
+    - resourceType: 2
+      amount: 2
+  - description: "\u0628\u0631\u0627\u06CC \u0634\u0633\u062A\u0646 \u062D\u06CC\u0627\u0637
+      \u0627\u0632 \u06A9\u062F\u0627\u0645 \u0627\u0633\u062A\u0641\u0627\u062F\u0647
+      \u0645\u06CC\u06A9\u0646\u06CC\u061F"
+    goodChoiceText: "\u062C\u0627\u0631\u0648"
+    badChoiceText: "\u0634\u0644\u0646\u06AF \u0622\u0628"
+    goodChoiceResources:
+    - resourceType: 0
+      amount: -5
+    - resourceType: 2
+      amount: -5
+    badChoiceResources:
+    - resourceType: 0
+      amount: -10
+    - resourceType: 2
+      amount: 2
+  - description: "\u0622\u0628\u06CC\u0627\u0631\u06CC \u06AF\u0644\u062F\u0627\u0646
+      \u0647\u0627 \u062F\u0631 \u0686\u0647 \u0632\u0645\u0627\u0646\u06CC \u0628\u0627\u06CC\u062F
+      \u0627\u0646\u062C\u0627\u0645 \u0634\u0648\u062F\u061F"
+    goodChoiceText: "\u0639\u0635\u0631"
+    badChoiceText: "\u0638\u0647\u0631"
+    goodChoiceResources:
+    - resourceType: 0
+      amount: -5
+    - resourceType: 2
+      amount: -5
+    badChoiceResources:
+    - resourceType: 0
+      amount: -10
+    - resourceType: 2
+      amount: 2
+  - description: "\u0622\u06CC\u0627 \u06AF\u06CC\u0627\u0647\u0627\u0646 \u0631\u0627
+      \u062F\u0631 \u0631\u0648\u0632 \u0628\u0627\u0631\u0627\u0646\u06CC \u0622\u0628\u06CC\u0627\u0631\u06CC
+      \u0645\u06CC\u06A9\u0646\u06CC\u061F"
+    goodChoiceText: "\u062E\u06CC\u0631"
+    badChoiceText: "\u0628\u0644\u0647"
+    goodChoiceResources:
+    - resourceType: 0
+      amount: -5
+    - resourceType: 2
+      amount: -5
+    badChoiceResources:
+    - resourceType: 0
+      amount: -10
+    - resourceType: 2
+      amount: 2
+  - description: "\u0645\u0627\u0634\u06CC\u0646 \u0638\u0631\u0641\u0634\u0648\u06CC\u06CC
+      \u0631\u0627 \u062F\u0631 \u0686\u0647 \u062D\u0627\u0644\u062A\u06CC \u0631\u0648\u0634\u0646
+      \u0645\u06CC\u06A9\u0646\u06CC\u061F"
+    goodChoiceText: "\u06A9\u0627\u0645\u0644\u0627 \u067E\u0631"
+    badChoiceText: "\u0646\u06CC\u0645\u0647 \u067E\u0631"
+    goodChoiceResources:
+    - resourceType: 0
+      amount: -5
+    - resourceType: 2
+      amount: -5
+    badChoiceResources:
+    - resourceType: 0
+      amount: -10
+    - resourceType: 2
+      amount: 2
+  - description: "\u0628\u0631\u0627\u06CC \u0634\u0633\u062A\u0646 \u0645\u0627\u0634\u06CC\u0646
+      \u0627\u0632 \u06A9\u062F\u0627\u0645 \u0627\u0633\u062A\u0641\u0627\u062F\u0647
+      \u0645\u06CC\u06A9\u0646\u06CC\u061F"
+    goodChoiceText: "\u0633\u0637\u0644 \u0622\u0628 "
+    badChoiceText: "\u0634\u0644\u0646\u06AF \u0622\u0628"
+    goodChoiceResources:
+    - resourceType: 0
+      amount: -5
+    - resourceType: 2
+      amount: -5
+    badChoiceResources:
+    - resourceType: 0
+      amount: -10
+    - resourceType: 2
+      amount: 2
+  - description: "\u0622\u06CC\u0627 \u06AF\u06CC\u0627\u0647\u0627\u0646 \u062F\u0631
+      \u0631\u0648\u0632 \u0628\u0627\u0631\u0627\u0646\u06CC \u0628\u0627\u06CC\u062F
+      \u0622\u0628\u06CC\u0627\u0631\u06CC \u0634\u0648\u0646\u062F\u061F"
+    goodChoiceText: "\u062E\u06CC\u0631"
+    badChoiceText: "\u0628\u0644\u0647"
+    goodChoiceResources:
+    - resourceType: 0
+      amount: -5
+    - resourceType: 2
+      amount: -5
+    badChoiceResources:
+    - resourceType: 0
+      amount: -10
+    - resourceType: 2
+      amount: 2
+  - description: "\u0628\u0631\u0627\u06CC \u0645\u0633\u0648\u0627\u06A9 \u0632\u062F\u0646
+      \u0627\u0632 \u06A9\u062F\u0627\u0645 \u06CC\u06A9 \u0627\u0633\u062A\u0641\u0627\u062F\u0647
+      \u0645\u06CC\u06A9\u0646\u06CC\u061F"
+    goodChoiceText: "\u06CC\u06A9 \u0644\u06CC\u0648\u0627\u0646 \u0622\u0628"
+    badChoiceText: "\u062C\u0631\u06CC\u0627\u0646 \u0622\u0628"
+    goodChoiceResources:
+    - resourceType: 0
+      amount: -5
+    - resourceType: 2
+      amount: -5
+    badChoiceResources:
+    - resourceType: 0
+      amount: -10
+    - resourceType: 2
+      amount: 2
+  - description: "\u0628\u0631\u0627\u06CC \u0634\u0633\u062A\u0646 \u062F\u0648\u0686\u0631\u062E\u0647
+      \u0627\u0632 \u0634\u0644\u0646\u06AF \u0622\u0628 \u0627\u0633\u062A\u0641\u0627\u062F\u0647
+      \u0645\u06CC\u06A9\u0646\u06CC\u061F"
+    goodChoiceText: "\u062E\u06CC\u0631"
+    badChoiceText: "\u0628\u0644\u0647"
+    goodChoiceResources:
+    - resourceType: 0
+      amount: -5
+    - resourceType: 2
+      amount: -5
+    badChoiceResources:
+    - resourceType: 0
+      amount: -10
+    - resourceType: 2
+      amount: 2
+  - description: "\u0628\u0631\u0627\u06CC \u0634\u0633\u062A\u0646 \u0645\u06CC\u0648\u0647
+      \u0647\u0627 \u0648 \u0633\u0628\u0632\u06CC\u062C\u0627\u062A \u0627\u0632
+      \u06A9\u062F\u0627\u0645 \u0631\u0648\u0634 \u0627\u0633\u062A\u0641\u0627\u062F\u0647
+      \u0645\u06CC\u06A9\u0646\u06CC\u061F"
+    goodChoiceText: "\u06A9\u0627\u0633\u0647 \u0622\u0628"
+    badChoiceText: "\u0634\u06CC\u0631 \u0622\u0628"
+    goodChoiceResources:
+    - resourceType: 0
+      amount: -5
+    - resourceType: 2
+      amount: -5
+    badChoiceResources:
+    - resourceType: 0
+      amount: -10
+    - resourceType: 2
+      amount: 2
+  - description: "\u0628\u0631\u0627\u06CC \u0622\u0628\u06CC\u0627\u0631\u06CC \u06AF\u06CC\u0627\u0647\u0627\u0646
+      \u0627\u0632 \u06A9\u062F\u0627\u0645 \u06CC\u06A9 \u0627\u0633\u062A\u0641\u0627\u062F\u0647
+      \u0645\u06CC\u06A9\u0646\u06CC\u061F"
+    goodChoiceText: "\u0622\u0628\u067E\u0627\u0634"
+    badChoiceText: "\u0634\u0644\u0646\u06AF \u0622\u0628"
+    goodChoiceResources:
+    - resourceType: 0
+      amount: -5
+    - resourceType: 2
+      amount: -5
+    badChoiceResources:
+    - resourceType: 0
+      amount: -10
+    - resourceType: 2
+      amount: 2
+  - description: "\u0628\u0631\u0627\u06CC \u0622\u0628\u06CC\u0627\u0631\u06CC \u06AF\u06CC\u0627\u0647\u0627\u0646
+      \u06A9\u062F\u0627\u0645 \u0631\u0648\u0634 \u0645\u0646\u0627\u0633\u0628
+      \u062A\u0631 \u0627\u0633\u062A\u061F"
+    goodChoiceText: "\u0622\u0628\u06CC\u0627\u0631\u06CC \u0642\u0637\u0631\u0647
+      \u0627\u06CC"
+    badChoiceText: "\u0622\u0628\u06CC\u0627\u0631\u06CC \u063A\u0631\u0642\u0627\u0628\u06CC"
+    goodChoiceResources:
+    - resourceType: 0
+      amount: -5
+    - resourceType: 2
+      amount: -5
+    badChoiceResources:
+    - resourceType: 0
+      amount: -10
+    - resourceType: 2
+      amount: 2
+  - description: "\u062D\u0645\u0627\u0645 \u0632\u06CC\u0631 \u062F\u0648\u0634
+      \u0628\u0647\u062A\u0631 \u0627\u0633\u062A \u06CC\u0627 \u062F\u0631 \u0648\u0627\u0646
+      \u062D\u0645\u0627\u0645\u061F"
+    goodChoiceText: "\u062F\u0648\u0634 \u0622\u0628"
+    badChoiceText: "\u0648\u0627\u0646"
+    goodChoiceResources:
+    - resourceType: 0
+      amount: -5
+    - resourceType: 2
+      amount: -5
+    badChoiceResources:
+    - resourceType: 0
+      amount: -10
+    - resourceType: 2
+      amount: 2
+  - description: "\u0628\u0631\u0627\u06CC \u0634\u0633\u062A\u0646 \u0638\u0631\u0641
+      \u0647\u0627 \u06A9\u062F\u0627\u0645 \u0631\u0648\u0634 \u0628\u0647\u062A\u0631
+      \u0627\u0633\u062A\u061F"
+    goodChoiceText: "\u0627\u0633\u06A9\u0627\u0686"
+    badChoiceText: "\u0622\u0628 \u062C\u0627\u0631\u06CC"
+    goodChoiceResources:
+    - resourceType: 0
+      amount: -5
+    - resourceType: 2
+      amount: -5
+    badChoiceResources:
+    - resourceType: 0
+      amount: -10
+    - resourceType: 2
+      amount: 2
+  - description: "\u0630\u062E\u06CC\u0631\u0647 \u0633\u0627\u0632\u06CC \u0622\u0628
+      \u0628\u0627\u0631\u0627\u0646 \u0628\u0631\u0627\u06CC \u0622\u0628\u06CC\u0627\u0631\u06CC
+      \u06AF\u06CC\u0627\u0647\u0627\u0646 \u06A9\u0627\u0631 \u062E\u0648\u0628\u06CC
+      \u0627\u0633\u062A\u061F"
+    goodChoiceText: "\u0628\u0644\u0647"
+    badChoiceText: "\u062E\u06CC\u0631"
+    goodChoiceResources:
+    - resourceType: 0
+      amount: -5
+    - resourceType: 2
+      amount: -5
+    badChoiceResources:
+    - resourceType: 0
+      amount: -10
+    - resourceType: 2
+      amount: 2
+  - description: "\u0634\u06CC\u0631 \u0647\u0627\u06CC \u062A\u0627\u06CC\u0645\u0631
+      \u062F\u0627\u0631 \u062F\u0631 \u0635\u0631\u0641\u0647 \u062C\u0648\u06CC\u06CC
+      \u062F\u0631 \u0645\u0635\u0631\u0641 \u0622\u0628 \u06A9\u0645\u06A9 \u0645\u06CC\u06A9\u0646\u0646\u062F. "
+    goodChoiceText: "\u0635\u062D\u06CC\u062D"
+    badChoiceText: "\u063A\u0644\u0637"
+    goodChoiceResources:
+    - resourceType: 0
+      amount: -5
+    - resourceType: 2
+      amount: -5
+    badChoiceResources:
+    - resourceType: 0
+      amount: -10
+    - resourceType: 2
+      amount: 2
+  - description: "\u0627\u0633\u062A\u0641\u0627\u062F\u0647 \u06CC\u062E \u0628\u0631\u0627\u06CC
+      \u0622\u0628\u06CC\u0627\u0631\u06CC \u06AF\u06CC\u0627\u0647\u0627\u0646 \u0622\u067E\u0627\u0631\u062A\u0645\u0627\u0646\u06CC
+      \u062F\u0631 \u0645\u0635\u0631\u0641 \u0622\u0628 \u0635\u0631\u0641\u0647
+      \u062C\u0648\u06CC\u06CC \u0645\u06CC\u06A9\u0646\u062F."
+    goodChoiceText: "\u062F\u0631\u0633\u062A"
+    badChoiceText: "\u0646\u0627\u062F\u0631\u0633\u062A"
+    goodChoiceResources:
+    - resourceType: 0
+      amount: -5
+    - resourceType: 2
+      amount: -5
+    badChoiceResources:
+    - resourceType: 0
+      amount: -10
+    - resourceType: 2
+      amount: 2
+  - description: "\u06A9\u062F\u0627\u0645 \u0631\u0648\u0634 \u0628\u0647 \u0631\u0634\u062F
+      \u06AF\u06CC\u0627\u0647\u0627\u0646 \u06A9\u0645\u06A9 \u0645\u06CC\u06A9\u0646\u062F\u061F"
+    goodChoiceText: "\u0622\u0628\u06CC\u0627\u0631\u06CC \u0647\u0648\u0634\u0645\u0646\u062F\u0627\u0646\u0647"
+    badChoiceText: "\u0622\u0628\u06CC\u0627\u0631\u06CC \u0641\u0631\u0627\u0648\u0627\u0646"
+    goodChoiceResources:
+    - resourceType: 0
+      amount: -5
+    - resourceType: 2
+      amount: -5
+    badChoiceResources:
+    - resourceType: 0
+      amount: -10
+    - resourceType: 2
+      amount: 2
+  - description: "\u062F\u0631 \u0647\u0646\u06AF\u0627\u0645 \u062E\u0634\u06A9\u0633\u0627\u0644\u06CC
+      \u06A9\u062F\u0627\u0645 \u06A9\u0627\u0631 \u0628\u0647\u062A\u0631 \u0627\u0633\u062A\u061F"
+    goodChoiceText: "\u062C\u06CC\u0631\u0647 \u0628\u0646\u062F\u06CC \u0622\u0628"
+    badChoiceText: "\u0645\u0635\u0631\u0641 \u0645\u0639\u0645\u0648\u0644\u06CC
+      \u0622\u0628"
+    goodChoiceResources:
+    - resourceType: 0
+      amount: -5
+    - resourceType: 2
+      amount: -5
+    badChoiceResources:
+    - resourceType: 0
+      amount: -10
+    - resourceType: 2
+      amount: 2
+  - description: "\u06A9\u062F\u0627\u0645\u06CC\u06A9 \u06AF\u0632\u06CC\u0646\u0647
+      \u0628\u0647\u06CC\u0646\u0647 \u062A\u0631\u06CC \u0627\u0633\u062A\u061F"
+    goodChoiceText: "\u0642\u0645\u0642\u0645\u0647 \u0622\u0628"
+    badChoiceText: "\u0628\u0637\u0631\u06CC \u06CC\u06A9\u0628\u0627\u0631 \u0645\u0635\u0631\u0641"
+    goodChoiceResources:
+    - resourceType: 0
+      amount: -5
+    - resourceType: 2
+      amount: -5
+    badChoiceResources:
+    - resourceType: 0
+      amount: -10
+    - resourceType: 2
+      amount: 2

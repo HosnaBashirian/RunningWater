@@ -8,7 +8,7 @@ namespace _Scripts.Models.Choice
     [Serializable]
     public class ChoiceDto 
     {
-        public string title;
+        // public string title;
         public string description;
         public string goodChoiceText;
         public string badChoiceText;

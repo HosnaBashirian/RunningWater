@@ -6,6 +6,7 @@ using _Scripts.Models.General;
 using _Scripts.Utils;
 using RTLTMPro;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace _Scripts.Controller.UI
 {
@@ -21,14 +22,18 @@ namespace _Scripts.Controller.UI
         [SerializeField] private List<ChoiceResourceTextHolder> badChoiceResources;
 
         private ChoiceDto _choiceDto;
+
+        private bool flipped = false;
         
         public void Set(ChoiceDto data)
         {
+            flipped = Random.Range(0, 100) > 50;
             _choiceDto = data;
-            title.text = data.title;
+            // title.text = data.title;
+            title.text = "";
             description.text = data.description;
-            goodChoiceText.text = data.goodChoiceText;
-            badChoiceText.text = data.badChoiceText;
+            goodChoiceText.text = flipped ? data.goodChoiceText : data.badChoiceText;
+            badChoiceText.text = flipped ? data.badChoiceText : data.goodChoiceText;
 
             goodChoiceResources.ForEach(x => x.gameObject.SetActive(false));
             badChoiceResources.ForEach(x => x.gameObject.SetActive(false));
@@ -36,7 +41,7 @@ namespace _Scripts.Controller.UI
             var plus = "+";
             var minus = "-";
             
-            foreach (var resource in data.goodChoiceResources)
+            foreach (var resource in flipped ? data.goodChoiceResources : data.badChoiceResources)
             {
                 var r = goodChoiceResources.Find(x => x.resourceType == resource.resourceType);
                 if (r == null) continue;
@@ -44,7 +49,7 @@ namespace _Scripts.Controller.UI
                 r.text.text = $"{(resource.amount > 0 ? plus : minus)}{Mathf.Abs(resource.amount)}";
             }
 
-            foreach (var resource in data.badChoiceResources)
+            foreach (var resource in flipped ? data.badChoiceResources : data.goodChoiceResources)
             {
                 var r = badChoiceResources.Find(x => x.resourceType == resource.resourceType);
                 if (r == null) continue;
@@ -55,7 +60,7 @@ namespace _Scripts.Controller.UI
 
         public void GoodChoice()
         {
-            foreach (var resource in _choiceDto.goodChoiceResources)
+            foreach (var resource in flipped ? _choiceDto.goodChoiceResources : _choiceDto.badChoiceResources)
             {
                 GameManager.Instance.AddResource(resource.amount, resource.resourceType);
             }
@@ -66,7 +71,7 @@ namespace _Scripts.Controller.UI
         
         public void BadChoice()
         {
-            foreach (var resource in _choiceDto.badChoiceResources)
+            foreach (var resource in flipped ? _choiceDto.badChoiceResources : _choiceDto.goodChoiceResources)
             {
                 GameManager.Instance.AddResource(resource.amount, resource.resourceType);
             }

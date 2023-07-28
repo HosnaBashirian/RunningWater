@@ -35,6 +35,9 @@ namespace _Scripts.Controller.UI
         [SerializeField] private Slider activePowerUpSlider;
         
         [SerializeField] private GameObject characterSelectionPanel;
+
+        [SerializeField] private RTLTextMeshPro gameOverButtonText;
+        [SerializeField] private RTLTextMeshPro levelText;
         
 
         public void SetResourceText(int value, ResourceType resourceType = ResourceType.Water)
@@ -53,18 +56,29 @@ namespace _Scripts.Controller.UI
             }
         }
 
+        private void OnEnable()
+        {
+            levelText.text = $"مرحله {GameHub.Instance.Level}";
+        }
+
         public void ShowGameOver()
         {
             gameOverPanel.SetActive(true);
             gameOverTitleText.text = $"باختی";
             gameWinScoreText.text = $"";
+            gameOverButtonText.text = $"شروع مجدد";
+            isWin = false;
         }
+
+        private bool isWin = false;
 
         public void ShowGameWin(int score)
         {
             gameOverPanel.SetActive(true);
             gameOverTitleText.text = $"بردی!";
-            gameWinScoreText.text = "آفرین!" + score + " لیتر آب ذخیره کردی!";
+            gameWinScoreText.text = " آفرین! " + score + " لیتر آب ذخیره کردی!";
+            gameOverButtonText.text = $"مرحله بعد";
+            isWin = true;
         }
 
         public void HideGameOver()
@@ -74,6 +88,7 @@ namespace _Scripts.Controller.UI
 
         public void OnRequestRestart()
         {
+            GameHub.Instance.Level += isWin ? 1 : 0;
             HideGameOver();
             GameManager.Instance.InitializeGame();
         }
@@ -98,6 +113,7 @@ namespace _Scripts.Controller.UI
                 else
                 {
                     startPanel.SetActive(true);
+                    levelText.text = $"مرحله {GameHub.Instance.Level}";
                     resourcesPanel.SetActive(true);
                     powerUpPanel.SetActive(false);
                 }
