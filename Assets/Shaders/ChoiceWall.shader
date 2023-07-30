@@ -16,7 +16,7 @@ Shader "Unlit/ChoiceWall"
             "RenderType"="Transparent" "Queue" = "Transparent"
         }
         LOD 100
-        Blend SrcAlpha Zero
+        Blend SrcAlpha OneMinusSrcAlpha
 
         GrabPass
         {
@@ -111,6 +111,8 @@ Shader "Unlit/ChoiceWall"
 
                 // col /= 2;
                 // col = lerp(_MainColor, col, rippleMultiplier);
+                col.a = _MainColor.a;
+                col.rgb = lerp(col.rgb, _MainColor.rgb, col.a * 0.75);
                 return col;
             }
             ENDCG
