@@ -50,6 +50,7 @@ namespace _Scripts.Controller.Ground
             };
 
             var choicesRemaining = Mathf.Floor(level / 2f) + 1;
+            var minDistBtwnChoice = Mathf.Floor((length-2) / choicesRemaining) + 1;
             
 
             while (counter < length)
@@ -73,7 +74,7 @@ namespace _Scripts.Controller.Ground
                     validChunkTypes.Remove(ChunkType.Resource);
                 }
                 
-                if (choicesRemaining <= 0)
+                if (choicesRemaining <= 0 || counter - lastChoicePos < minDistBtwnChoice)
                 {
                     validChunkTypes.Remove(ChunkType.Choice);
                 }
@@ -96,6 +97,7 @@ namespace _Scripts.Controller.Ground
                         lastResourcePos = counter;
                         break;
                     case ChunkType.Choice:
+                        lastChoicePos = counter;
                         choicesRemaining -= 1;
                         break;
                 }
