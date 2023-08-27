@@ -3073,7 +3073,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-69844
+  m_Name: pb_Mesh-69836
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -68263,6 +68263,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1714358918}
+    - target: {fileID: 9082330113044386038, guid: 451112cb964384afc932ce919a99e1cc, type: 3}
+      propertyPath: m_VersionIndex
+      value: 885
+      objectReference: {fileID: 0}
     - target: {fileID: 9082330113044386039, guid: 451112cb964384afc932ce919a99e1cc, type: 3}
       propertyPath: m_ReceiveShadows
       value: 1
