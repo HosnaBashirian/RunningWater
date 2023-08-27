@@ -15,8 +15,8 @@ MonoBehaviour:
   powerUpDuration: 7
   requirements:
   - type: 0
-    requiredResource: 2
-    resourceAmount: 50
+    requiredResource: 1
+    resourceAmount: 20
   - type: 1
-    requiredResource: 2
-    resourceAmount: 50
+    requiredResource: 1
+    resourceAmount: 20

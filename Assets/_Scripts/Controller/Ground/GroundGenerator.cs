@@ -13,7 +13,7 @@ namespace _Scripts.Controller.Ground
     {
         private const float ChunkSizeZ = 2f;
         
-        public GameObject GenerateGround(int length = 15, GroundDifficulty difficulty = GroundDifficulty.Easy)
+        public GameObject GenerateGround(int length = 15, GroundDifficulty difficulty = GroundDifficulty.Easy, int level = 1)
         {
             var chunksData = GameHub.Instance.ChunksData;
             
@@ -49,6 +49,9 @@ namespace _Scripts.Controller.Ground
                 _ => chunksData.easyDifficulty
             };
 
+            var choicesRemaining = Mathf.Floor(level / 2f) + 1;
+            
+
             while (counter < length)
             {
                 // get chunk type based on difficulty
@@ -70,7 +73,7 @@ namespace _Scripts.Controller.Ground
                     validChunkTypes.Remove(ChunkType.Resource);
                 }
                 
-                if (counter - lastChoicePos < difficultyData.minChoiceDistance)
+                if (choicesRemaining <= 0)
                 {
                     validChunkTypes.Remove(ChunkType.Choice);
                 }
@@ -93,7 +96,7 @@ namespace _Scripts.Controller.Ground
                         lastResourcePos = counter;
                         break;
                     case ChunkType.Choice:
-                        lastChoicePos = counter;
+                        choicesRemaining -= 1;
                         break;
                 }
                 

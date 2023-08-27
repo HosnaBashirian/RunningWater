@@ -76,7 +76,7 @@ namespace _Scripts.Controller.UI
         {
             gameOverPanel.SetActive(true);
             gameOverTitleText.text = $"بردی!";
-            gameWinScoreText.text = " آفرین! " + score + " لیتر آب ذخیره کردی!";
+            gameWinScoreText.text = " آفرین! " + score + " لیتر آب ذخیره کردی!" + " " + score + " سکه بهت اضافه شد.";
             gameOverButtonText.text = $"مرحله بعد";
             isWin = true;
         }
@@ -142,14 +142,14 @@ namespace _Scripts.Controller.UI
             var x2Requirement = GameHub.Instance.PowerUpDataHolder.requirements.First(x => x.type == PowerUpType.X2);
             x2PowerUpPrice.text = $"{x2Requirement.resourceAmount}";
             x2PowerUpButton.interactable =
-                GameManager.Instance.resources[x2Requirement.requiredResource] >= x2Requirement.resourceAmount &&
+                GameHub.Instance.Coins >= x2Requirement.resourceAmount &&
                 !GameManager.Instance.x2PowerUpUsed;
 
             var shieldRequirement =
                 GameHub.Instance.PowerUpDataHolder.requirements.First(x => x.type == PowerUpType.Shield);
             shieldPowerUpPrice.text = $"{shieldRequirement.resourceAmount}";
             shieldPowerUpButton.interactable =
-                GameManager.Instance.resources[shieldRequirement.requiredResource] >=
+                GameHub.Instance.Coins >=
                 shieldRequirement.resourceAmount &&
                 !GameManager.Instance.shieldPowerUpUsed;
         }

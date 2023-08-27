@@ -40,7 +40,7 @@ namespace _Scripts.Controller.Items
             if (GameHub.Instance.Player.transform.position.z > transform.position.z + 0.75f)
             {
                 GameHub.Instance.ParticleData.SpawnParticle("enemyPass", transform.position, Quaternion.identity);
-                GameManager.Instance.AddResource(reward, ResourceType.Energy);
+                GameManager.Instance.AddResource(reward, ResourceType.Coin);
                 Destroy(gameObject);
             }
         }

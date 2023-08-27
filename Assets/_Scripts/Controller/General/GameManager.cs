@@ -115,7 +115,7 @@ namespace _Scripts.Controller.General
                 ? GroundDifficulty.Easy
                 : (GameHub.Instance.Level < 16 ? GroundDifficulty.Medium : GroundDifficulty.Hard);
 
-            currentLevel = GameHub.Instance.GroundGenerator.GenerateGround(levelLength, difficulty);
+            currentLevel = GameHub.Instance.GroundGenerator.GenerateGround(levelLength, difficulty, GameHub.Instance.Level);
         }
 
         public void MultiplyResource(float value, ResourceType resourceType = ResourceType.Water)
@@ -182,6 +182,7 @@ namespace _Scripts.Controller.General
             IsGameStarted = false;
             IsGameFinished = true;
             GameHub.Instance.UIManager.HudController.ShowGameWin(resources[ResourceType.Water]);
+            AddResource(resources[ResourceType.Water], ResourceType.Coin);
             GameHub.Instance.UIManager.ChoicePopUp.gameObject.SetActive(false);
             GameHub.Instance.Player.Win();
             OnPowerUpExpire?.Invoke();
@@ -197,9 +198,9 @@ namespace _Scripts.Controller.General
             
             var requirement =
                 GameHub.Instance.PowerUpDataHolder.requirements.First(x => x.type == PowerUpType.Shield);
-            if (resources[requirement.requiredResource] < requirement.resourceAmount) return;
-            resources[requirement.requiredResource] -= requirement.resourceAmount;
-            GameHub.Instance.UIManager.HudController.SetResourceText(resources[requirement.requiredResource],
+            if (GameHub.Instance.Coins < requirement.resourceAmount) return;
+            GameHub.Instance.Coins -= requirement.resourceAmount;
+            GameHub.Instance.UIManager.HudController.SetResourceText(GameHub.Instance.Coins,
                 requirement.requiredResource);
 
             OnPowerUpActive?.Invoke(PowerUpType.Shield);
@@ -215,9 +216,9 @@ namespace _Scripts.Controller.General
             
             var requirement =
                 GameHub.Instance.PowerUpDataHolder.requirements.First(x => x.type == PowerUpType.X2);
-            if (resources[requirement.requiredResource] < requirement.resourceAmount) return;
-            resources[requirement.requiredResource] -= requirement.resourceAmount;
-            GameHub.Instance.UIManager.HudController.SetResourceText(resources[requirement.requiredResource],
+            if (GameHub.Instance.Coins < requirement.resourceAmount) return;
+            GameHub.Instance.Coins -= requirement.resourceAmount;
+            GameHub.Instance.UIManager.HudController.SetResourceText(GameHub.Instance.Coins,
                 requirement.requiredResource);
 
             OnPowerUpActive?.Invoke(PowerUpType.X2);

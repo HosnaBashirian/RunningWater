@@ -11,7 +11,7 @@ namespace _Scripts.Controller.Items
         public override void Interact()
         {
             var amount = GameManager.Instance.x2PowerUpActive ? 2 : 1;
-            GameManager.Instance.AddResource(amount, ResourceType.Coin);
+            GameManager.Instance.AddResource(amount, ResourceType.Water);
             GameHub.Instance.ParticleData.SpawnParticle("coinCollect", transform.position, quaternion.identity);
             GameHub.Instance.AudioPlayer.PlayOneShot(SoundType.Collect);
             base.Interact();

@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using _Scripts.Models.General;
+using MyBox;
 using UnityEngine;
 
 namespace _Scripts.Models.Choice
@@ -7,5 +9,16 @@ namespace _Scripts.Models.Choice
     public class ChoiceDataHolder : ScriptableObject
     {
         public List<ChoiceDto> choices;
+
+        [ButtonMethod]
+        public void RemoveResource()
+        {
+            var resourceToRemove = ResourceType.Energy;
+            foreach (var choice in choices)
+            {
+                choice.badChoiceResources.RemoveAll(x => x.resourceType == resourceToRemove);
+                choice.goodChoiceResources.RemoveAll(x => x.resourceType == resourceToRemove);
+            }
+        }
     }
 }
