@@ -20,12 +20,15 @@ namespace _Scripts.Models.Choice
                 choice.goodChoiceResources.RemoveAll(x => x.resourceType == resourceToRemove);
             }
         }
-        
+
         [ButtonMethod]
-        public void Save(){
+        public void Save()
+        {
             // Save scriptable object
+#if UNITY_EDITOR
             UnityEditor.EditorUtility.SetDirty(this);
             UnityEditor.AssetDatabase.SaveAssets();
-            }
+#endif
+        }
     }
 }
