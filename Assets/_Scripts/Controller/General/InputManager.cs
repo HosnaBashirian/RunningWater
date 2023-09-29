@@ -18,8 +18,9 @@ namespace _Scripts.Controller.General
             }
             else if (Input.GetMouseButton(0))
             {
+                if (UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject()) return;
                 var delta = Input.mousePosition - _lastMousePosition;
-                if (Mathf.Abs(delta.x) > 0.1f)
+                if (Mathf.Abs(delta.x) > 1f)
                 {
                     OnHorizontalSwipe?.Invoke(delta.x);
                 }
