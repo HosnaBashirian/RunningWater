@@ -59,8 +59,8 @@ namespace _Scripts.Controller.General
             {
                 if (Input.GetMouseButtonDown(0))
                 {
-                    // check if player clicked on UI
                     if (UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject()) return;
+                    if (Input.mousePosition.y < 300) return;
                     IsGameStarted = true;
                     IsGameFinished = false;
                 }
@@ -80,7 +80,6 @@ namespace _Scripts.Controller.General
 
         public void InitializeGame()
         {
-            print("Initialize");
             IsGameStarted = false;
             IsGameFinished = false;
             var playerStartPos = new Vector3(0, 0.6f, 0);
