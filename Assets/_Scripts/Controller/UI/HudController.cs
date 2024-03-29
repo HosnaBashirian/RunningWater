@@ -58,15 +58,15 @@ namespace _Scripts.Controller.UI
 
         private void OnEnable()
         {
-            levelText.text = $"مرحله {GameHub.Instance.Level}";
+            levelText.text = $"Level {GameHub.Instance.Level}";
         }
 
         public void ShowGameOver()
         {
             gameOverPanel.SetActive(true);
-            gameOverTitleText.text = $"باختی";
+            gameOverTitleText.text = $"GAME OVER";
             gameWinScoreText.text = $"";
-            gameOverButtonText.text = $"شروع مجدد";
+            gameOverButtonText.text = $"Try Again";
             isWin = false;
         }
 
@@ -75,9 +75,9 @@ namespace _Scripts.Controller.UI
         public void ShowGameWin(int score)
         {
             gameOverPanel.SetActive(true);
-            gameOverTitleText.text = $"بردی!";
-            gameWinScoreText.text = " آفرین! " + score + " لیتر آب ذخیره کردی!" + " " + score + " سکه بهت اضافه شد.";
-            gameOverButtonText.text = $"مرحله بعد";
+            gameOverTitleText.text = $"VICOTRY";
+            gameWinScoreText.text = " AWESOME! " + "You Saved " + score + " Litres of Water." + " " + score + " Coins Earned!";
+            gameOverButtonText.text = $"Next Level";
             isWin = true;
         }
 
@@ -114,7 +114,7 @@ namespace _Scripts.Controller.UI
                 else
                 {
                     startPanel.SetActive(true);
-                    levelText.text = $"مرحله {GameHub.Instance.Level}";
+                    levelText.text = $"Level {GameHub.Instance.Level}";
                     resourcesPanel.SetActive(true);
                     powerUpPanel.SetActive(false);
                     activePowerUp.SetActive(false);
@@ -136,7 +136,7 @@ namespace _Scripts.Controller.UI
             if (GameManager.Instance.shieldPowerUpActive || GameManager.Instance.x2PowerUpActive)
             {
                 activePowerUp.SetActive(true);
-                activePowerUpText.text = GameManager.Instance.shieldPowerUpActive ? $"سپر" : $"x2";
+                activePowerUpText.text = GameManager.Instance.shieldPowerUpActive ? $"Shield" : $"x2";
                 activePowerUpSlider.value = GameManager.Instance.PowerUpTimeLeft;
             }
             var x2Requirement = GameHub.Instance.PowerUpDataHolder.requirements.First(x => x.type == PowerUpType.X2);
